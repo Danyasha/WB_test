@@ -17,7 +17,7 @@ ADD /app/ ${app_dir}
 RUN go install main
 ADD /tv_storage.db ${app_dir}
 RUN go build main
-CMD ["/bin/bash"]
+CMD ["./main"]
 # ENTRYPOINT [ "/bin/bash" ]
 #docker rm -f $(docker ps -aq)
 #docker build -t go_app .

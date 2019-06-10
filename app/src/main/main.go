@@ -14,7 +14,7 @@ func main() {
 	r.HandleFunc("/tvs", getTvs).Methods("GET")
 	r.HandleFunc("/", index).Methods("GET")
 	r.HandleFunc("/tvs/{id}", getTv).Methods("GET")
-	r.HandleFunc("/tv", createTv).Methods("POST")
+	r.HandleFunc("/tvs", createTv).Methods("POST")
 
 	port := os.Getenv("go_app_port")
 	if port == "" {
