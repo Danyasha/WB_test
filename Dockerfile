@@ -15,9 +15,9 @@ RUN go get "github.com/mattn/go-sqlite3"
 
 ADD /app/ ${app_dir}
 RUN go install main
-ADD /DB/ ${app_dir}
-
-CMD ["./bin/main"]
+ADD /tv_storage.db ${app_dir}
+RUN go build main
+CMD ["/bin/bash"]
 # ENTRYPOINT [ "/bin/bash" ]
 #docker rm -f $(docker ps -aq)
 #docker build -t go_app .
