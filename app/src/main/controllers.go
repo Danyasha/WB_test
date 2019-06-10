@@ -2,6 +2,7 @@ package main
 
 import (
 	"database/sql"
+	"fmt"
 	"log"
 
 	_ "github.com/mattn/go-sqlite3"
@@ -22,6 +23,7 @@ func dbGetTvs() ([]*tv, error) {
 	}
 	rows, err := db.Query("SELECT * FROM tvs")
 	if err != nil {
+		fmt.Println(err)
 		return nil, err
 	}
 	tvs := make([]*tv, 0)
